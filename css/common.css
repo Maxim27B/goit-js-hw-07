@@ -12,3 +12,23 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
+.js-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+  width: 1200px;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-boxes {
+  display: block;
+  width: 40px;
+  height: 40px;
+}

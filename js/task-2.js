@@ -26,9 +26,19 @@ const images = [
 ];
 
 const list = document.querySelector('.gallery');
-
-const newElem = images
-  .map((newElem) => `<li><img url="${newElem.url}" alt="${newElem.alt}"></img></li>`)
+const imageTemplate = images
+  .map((el) => `<li><img src="${el.url}" alt="${el.alt}"></img></li>`)
   .join('');
-console.log(newElem)
-list.innerHTML = newElem;
+list.innerHTML = imageTemplate;
+list.classList.add('js-list');
+
+const liElements = document.querySelectorAll('li');
+liElements.forEach(element => {
+  element.classList.add('js-list-items');
+});
+
+const imgElements = document.querySelectorAll('img');
+imgElements.forEach(element => {
+  element.style.width = ('360px');
+  element.style.height = ('300px');
+})
