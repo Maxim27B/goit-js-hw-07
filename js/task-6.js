@@ -22,17 +22,14 @@ const height = 30;
 
 function createBoxes(amount) {
     boxesElem.innerHTML = '';
-    for (let i = 1; i <= amount; i++){
-        const divElem = `<div class="color-boxes"></div>`;
-        boxesElem.insertAdjacentHTML('beforeend', [divElem]);
-        boxesElem.lastChild.style.backgroundColor = getRandomHexColor();
-        boxesElem.lastChild.style.width = `${width + (i-1) * 10}px`;
-        boxesElem.lastChild.style.height = `${height + (i-1) *10}px`;
+    let markup = '';
+    for (let i = 1; i <= amount; i++) {
+        const divElem = `<div class="color-boxes" style="background-color: ${ getRandomHexColor()}; width: ${width + (i-1) * 10}px; height: ${height + (i-1) *10}px"></div>`;
+        markup += divElem;
     }
+    boxesElem.insertAdjacentHTML('beforeend', [markup]);
     input.value = '';
 }
-
-
 
 destroyBtn.addEventListener('click', () => {
     boxesElem.innerHTML = '';
